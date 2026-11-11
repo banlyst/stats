@@ -34,54 +34,53 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
 
-      # - name: Personal metrics
-      #   uses: lowlighter/metrics@latest
-      #   with:
-      #     filename: metrics.svg
-      #     base: "header, repositories"
-      #     token: ${{ secrets.METRICS_TOKEN }}
-      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
-      #     config_timezone: Europe/Paris
-      #     config_padding: 10%
+      - name: Personal metrics
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.svg
+          base: "header, repositories"
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          config_timezone: Asia/Shanghai
+          config_padding: 10%
       
-      # - name: Personal Activities
-      #   uses: lowlighter/metrics@latest
-      #   with:
-      #     filename: activity.svg
-      #     base: "activity, community, metadata"
-      #     token: ${{ secrets.METRICS_TOKEN }}
-      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
-      #     config_padding: 10%
+      - name: Personal Activities
+        uses: lowlighter/metrics@latest
+        with:
+          filename: activity.svg
+          base: "activity, community, metadata"
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          config_padding: 10%
+      
+      - name: Calendar
+      # See action.yml for all options
+        uses: lowlighter/metrics@latest
+        with:
+          filename: calendar.svg
+          # Your GitHub token
+          token: ${{ secrets.METRICS_TOKEN }}
+          # GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          base: ""
+          config_padding: 10%
           
-      # - name: Calendar
-      # # See action.yml for all options
-      #   uses: lowlighter/metrics@latest
-      #   with:
-      #     filename: calendar.svg
-      #     # Your GitHub token
-      #     token: ${{ secrets.METRICS_TOKEN }}
-      #     # GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it
-      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
-      #     plugin_isocalendar: yes
-      #     plugin_isocalendar_duration: full-year
-      #     base: ""
-      #     config_padding: 10%
-          
-      # - name: Plugin Languages
-      #   uses: lowlighter/metrics@latest
-      #   with:
-      #     filename: languages.svg
-      #     token: ${{ secrets.METRICS_TOKEN }}
-      #     committer_token: ${{ secrets.GITHUB_TOKEN }}
-      #     plugin_languages: yes
-      #     plugin_languages_ignored: "Yacc, css, vim, html, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot, Makefile, Ruby, Vim Script, Python, ApacheConf" # List of comma separated languages to ignore
-      #     plugin_languages_skipped: "" # List of comma separated repositories to skip
-      #     base: ""
-      #     plugin_topics: yes
-      #     plugin_topics_mode: mastered
-      #     plugin_topics_limit: 0
-      #     config_padding: 10%
-
+      - name: Plugin Languages
+        uses: lowlighter/metrics@latest
+        with:
+          filename: languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          plugin_languages: yes
+          plugin_languages_ignored: "css, vim, html, tex, less, dockerfile, makefile, qmake, cmake, shell, gnuplot, Makefile, Ruby, Vim Script, Python, ApacheConf" # List of comma separated languages to ignore, Yacc, lex, ...
+          plugin_languages_skipped: "" # List of comma separated repositories to skip
+          base: ""
+          plugin_topics: yes
+          plugin_topics_mode: mastered
+          plugin_topics_limit: 0
+          config_padding: 10%
       
       # - name: Plugin Posts Dev.to
       #   uses: lowlighter/metrics@latest
