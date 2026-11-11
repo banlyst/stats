@@ -1,6 +1,8 @@
 # README
 
-![Metrics](https://metrics.lecoq.io/banlyst?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&config.timezone=Asia%2FShanghai)
+<!-- ![Metrics](https://metrics.lecoq.io/banlyst?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&config.timezone=Asia%2FShanghai) -->
+
+![Metrics](https://github.com/banlyst/stats/raw/refs/heads/master/github-metrics.svg)
 
 <!-- <img alt="🦁" align="left" width="400px" src="https://github.com/hedzr/stats/blob/main/metrics.svg">
 <a href="https://domenicoluciani.com"><img alt="🦁" align="right" width="400px" src="https://github.com/hedzr/stats/blob/main/rss.svg"></a>
